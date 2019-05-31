@@ -14,5 +14,9 @@
     "data-structure"
   ],
   "author": "Mohsen Shafiei Tafreshi <mohsenshafieitafreshi@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "md5": "2.2.1",
+    "sha1": "1.1.1"
+  }
 }
