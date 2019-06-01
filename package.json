@@ -8,6 +8,8 @@
     "queue": "node ./queue/index.js",
     "linkedlist": "node ./linkedlist/index.js",
     "heap": "node ./heap/index.js",
+    "heap-array": "node ./heap-array/index.js",
+    "bst": "node ./bst/index.js",
     "hash": "node ./hash-table/index.js"
   },
   "keywords": [

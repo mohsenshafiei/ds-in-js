@@ -24,10 +24,12 @@ class HashTable {
 }
 
 const hashTable = new HashTable();
+
 hashTable.set('mohsen', {
   lastName: 'shafiei tafreshi',
   age: 27
 });
+
 hashTable.set('jeff', {
   lastName: 'mosawy',
   age: 26
