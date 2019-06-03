@@ -1,69 +1,119 @@
 class Node {
-  constructor(data) {
-    this.data = data;
-    this.left = null;
-    this.right = null;
+  constructor(key, value) {
+    this.key = key;
+    this.value = value;
   }
 }
 
-class Heap {
+class BinaryHeap {
   constructor() {
-    this.root = null;
+    this.list = [];
   }
-  swap(nodeA, nodeB) {
-    let temp = nodeA.data;
-    nodeA.data = nodeB.data;
-    nodeB.data = temp;
-  }
-  insert(data) {
-    const node = new Node(data);
-    if (this.root === null) {
-      this.root = node;
-      return true;
+  buildHeap(keys, values) {
+    if (typeof values !== `undefined` && values.length !== keys.length) {
+      throw new Error('Key array must be the same length as value array');
     }
-    this._insertNode(this.root, node);
-  }
-  _insertNode(root, node) {
-    if(root.left === null) {
-      root.left = node;
-      return;
-    } else {
-      this._insertNode(root.left, node);
-      return;
+    let nodeArray = [];
+    for (let i = 0 ; i < keys.length; i++) {
+      nodeArray.push(new Node(keys[i], values ? values[i] : undefined));
     }
-    if(root.right === null) {
-      root.right = node;
-    } else {
-      this._insertNode(root.right,node);
+    this.buildHeapFromNodeArray(nodeArray);
+  }
+  clear() {
+    this.list = [];
+  }
+  extractMinimum() {
+    if (!this.list.length) {
+      return undefined;
+    }
+    if (this.list.length === 1) {
+      return this.list.shift();
+    }
+    const min = this.list[0];
+    this.list[0] = this.list.pop();
+    this.heapify(0);
+    return min;
+  }
+  findMinimum() {
+    return this.isEmpty() ? undefined : this.list[0];
+  }
+  insert(key, value) {
+    let i = this.list.length;
+    const node = new Node(key, value);
+    this.list.push(node);
+    let parent = this.getParent(i);
+    while(typeof parent !== `undefined` && this.compare(this.list[i], this.list[parent]) < 0) {
+      this.swap(i, parent);
+      i = parent;
+      parent = this.getParent(i);
+    }
+    return node;
+  }
+  isEmpty() {
+    return !this.list.length;
+  }
+  size() {
+    return this.list.length;
+  }
+  union(other) {
+    const array = this.list.concat(other.list);
+    this.buildHeapFromNodeArray(array);
+  }
+  compare(a, b) {
+    if (a.key > b.key) {
+      return 1;
+    }
+    if (a.key < b.key) {
+      return -1
+    }
+    return 0;
+  }
+  heapify(i) {
+    const left = this.getLeft(i);
+    const right = this.getRight(i);
+    let smallest = i;
+    if (left < this.list.length && this.compare(this.list[left], this.list[i]) < 0) {
+      smallest = left;
+    }
+    if (right < this.list.length && this.compare(this.list[right], this.list[smallest]) < 0) {
+      smallest = right;
+    }
+    if (smallest !== i) {
+      this.swap(i, smallest);
+      this.heapify(smallest);
     }
   }
-  heapify(node) {
-    const min = (node.left && (node.right.data > node.left.data)) || node.right === null ? node.left : node.right;
-    if (min && node.data > min.data) {
-      swap(node, min)
-      this.heapify(min);
+  buildHeapFromNodeArray(nodeArray) {
+    this.list = nodeArray;
+    for (let i = Math.floor(this.list.length / 2); i >= 0; i-- ) {
+      this.heapify(i);
     }
   }
-  postorder(node) {
-    if (!node) {
-      return null;
-    }
-    console.log(node.data);
-    this.postorder(node.left);
-    this.postorder(node.right);
+  swap(a, b) {
+    let temp = this.list[a];
+    this.list[a] = this.list[b];
+    this.list[b] = temp;
   }
-  getRoot() {
-    return this.root;
+  getParent(i) {
+    if (i === 0) {
+      return undefined;
+    }
+    return Math.floor((i-1)/2);
+  }
+  getLeft(i) {
+    return 2*i + 1;
+  }
+  getRight(i) {
+    return 2*i + 2;
+  }
+  print() {
+    console.log(this.list);
   }
 }
 
-
-const heap = new Heap();
-heap.insert(1);
-heap.insert(2)
-heap.insert(4);
-heap.insert(3);
-heap.insert(7);
-heap.insert(6);
-heap.insert(5);
-heap.postorder(heap.getRoot());
+const binaryHeap = new BinaryHeap();
+binaryHeap.buildHeap([5, 4, 3, 1, 7], ['mohsen', 'mostafa', 'jeff', 'idin', 'amir']);
+binaryHeap.print();
+console.log(binaryHeap.extractMinimum());
+binaryHeap.insert(2, 'mohammad hossein');
+binaryHeap.print();
