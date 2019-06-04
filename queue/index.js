@@ -29,7 +29,6 @@ class Queue {
     console.log(this.queue);
   }
 }
-
-const queue = new Queue(['mostafa', 'jeff', 'amir', 'idin', 'mohammad hossein']);
-queue.enqueue('mohsen');
-queue.print();
+module.exports = {
+  Queue
+}

@@ -11,7 +11,8 @@
     "heap-array": "node ./heap-array/index.js",
     "bst": "node ./bst/index.js",
     "hash": "node ./hash-table/index.js",
-    "graph": "node ./graph/index.js"
+    "graph": "node ./graph/index.js",
+    "bfs": "node ./bfs/index.js"
   },
   "keywords": [
     "data-structure"

@@ -29,11 +29,3 @@ class Graph {
 module.exports = {
   Graph
 }
-
-const graph = new Graph();
-graph.add(1, [2,3,4]);
-graph.add(2, [1,4,5]);
-graph.add(3, [1,2,3]);
-graph.print();
-graph.remove(2);
-graph.print();
