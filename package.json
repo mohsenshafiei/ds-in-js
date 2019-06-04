@@ -10,7 +10,8 @@
     "heap": "node ./heap/index.js",
     "heap-array": "node ./heap-array/index.js",
     "bst": "node ./bst/index.js",
-    "hash": "node ./hash-table/index.js"
+    "hash": "node ./hash-table/index.js",
+    "graph": "node ./graph/index.js"
   },
   "keywords": [
     "data-structure"
