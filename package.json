@@ -12,7 +12,8 @@
     "bst": "node ./src/bst/index.js",
     "hash": "node ./src/hash-table/index.js",
     "graph": "node ./src/graph/index.js",
-    "bfs": "node ./src/bfs/index.js"
+    "bfs": "node ./src/bfs/index.js",
+    "dfs": "node ./src/dfs/index.js"
   },
   "keywords": [
     "data-structure"
