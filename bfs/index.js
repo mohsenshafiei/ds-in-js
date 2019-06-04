@@ -24,3 +24,14 @@ class BFS extends Graph {
     this.nodes.forEach((node) => node.visited = false);
   }
 }
+
+const graph = new BFS();
+graph.add(1, [2, 5]);
+graph.add(2, [5, 3]);
+graph.add(3, [4]);
+graph.add(4, [6]);
+graph.add(5, []);
+graph.add(6, []);
+
+graph.print();
+graph.bfs(1);
