@@ -4,15 +4,15 @@
   "description": "data structures in javascript",
   "main": "index.js",
   "scripts": {
-    "stack": "node ./stack/index.js",
-    "queue": "node ./queue/index.js",
-    "linkedlist": "node ./linkedlist/index.js",
-    "heap": "node ./heap/index.js",
-    "heap-array": "node ./heap-array/index.js",
-    "bst": "node ./bst/index.js",
-    "hash": "node ./hash-table/index.js",
-    "graph": "node ./graph/index.js",
-    "bfs": "node ./bfs/index.js"
+    "stack": "node ./src/stack/index.js",
+    "queue": "node ./src/queue/index.js",
+    "linkedlist": "node ./src/linkedlist/index.js",
+    "heap": "node ./src/heap/index.js",
+    "heap-array": "node ./src/heap-array/index.js",
+    "bst": "node ./src/bst/index.js",
+    "hash": "node ./src/hash-table/index.js",
+    "graph": "node ./src/graph/index.js",
+    "bfs": "node ./src/bfs/index.js"
   },
   "keywords": [
     "data-structure"
