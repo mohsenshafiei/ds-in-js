@@ -19,7 +19,7 @@ class Graph {
     this.nodes.forEach((item) => item.edges.splice(item.edges.indexOf(identifier), 1));
   }
   print() {
-    this.nodes.forEach((node) => console.log(node.identifier, node.edges))
+    this.nodes.forEach((node) => console.log(node.identifier, node.edges));
   }
   reset() {
     this.nodes.forEach(node => node.visited = false);
