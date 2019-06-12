@@ -8,14 +8,14 @@
     "queue": "node ./src/queue/index.js",
     "linkedlist": "node ./src/linkedlist/index.js",
     "heap": "node ./src/heap/index.js",
-    "heap-array": "node ./src/heap-array/index.js",
     "bst": "node ./src/bst/index.js",
     "hash": "node ./src/hash-table/index.js",
     "graph": "node ./src/graph/index.js",
     "bfs": "node ./src/bfs/index.js",
     "dfs": "node ./src/dfs/index.js",
     "dijkstra": "node ./src/dijkstra/index.js",
-    "avl": "node ./src/avl/index.js"
+    "avl": "node ./src/avl/index.js",
+    "jump-search": "node ./src/jump-search/index.js"
   },
   "keywords": [
     "data-structure"
