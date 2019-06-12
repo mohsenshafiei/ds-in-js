@@ -14,7 +14,8 @@
     "graph": "node ./src/graph/index.js",
     "bfs": "node ./src/bfs/index.js",
     "dfs": "node ./src/dfs/index.js",
-    "dijkstra": "node ./src/dijkstra/index.js"
+    "dijkstra": "node ./src/dijkstra/index.js",
+    "avl": "node ./src/avl/index.js"
   },
   "keywords": [
     "data-structure"
