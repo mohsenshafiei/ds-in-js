@@ -15,7 +15,8 @@
     "dfs": "node ./src/dfs/index.js",
     "dijkstra": "node ./src/dijkstra/index.js",
     "avl": "node ./src/avl/index.js",
-    "jump-search": "node ./src/jump-search/index.js"
+    "jump-search": "node ./src/jump-search/index.js",
+    "interpolation-search": "node ./src/interpolation-search/index.js"
   },
   "keywords": [
     "data-structure"
